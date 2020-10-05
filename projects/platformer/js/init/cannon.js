@@ -25,6 +25,12 @@
         let createCannon = cannon.create;
         ////////////////////////////////////////////////////////////////////////
         // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
+        createCannon("top", 450);
+        createCannon("right",50);
+        createCannon("left", 150);
+         createCannon("bottom", 250);
+        
+        
         
         // example: 
         createCannon("top", 450);
