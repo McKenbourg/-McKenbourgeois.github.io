@@ -14,7 +14,7 @@
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 100px;  /* <--- Change me! */
+			left: 0px;  /* <--- Change me! */
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -60,24 +60,27 @@
 			// TODO 2 - Variable declarations 
 			 var positionX = 0;
             function update(10)
-                myVariable = myVariable + 10;
+            
              {
-            moveBoxTo(positionX);
+            var points = 0;
 
             };
-			var speed = 10 ;
+			var speed = 10;
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
-			function update(100) {
-                moveBoxTo(boardWidth);
-                    moveBoxTo(25) 
-                     moveBoxTo(50) 
-                    moveBoxTo(30) 
-            positionX = positionX + 10
-            moveBoxTo(positionX)
+			function update() {
+         /* Your Code to Increase positionX by 10 HERE*/   
+                positionX = positionX + speed
+            moveBoxTo(positionX);
+                if (positionX> boardWidth){
+                    speed = speed * -1;
+                }
+                if (positionX < MINIMUM X-Coordinate){
+                    speed = speed * 0;
+                }
 			};
 
 			/* 
@@ -86,12 +89,12 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				 positionX = positionX + 10 ;
-                    changeBoxText(1);
-            // your code to increase the points variable by 1
-             changeBoxText(points);
-                    points = points + 1 ;
-			};
+				 positionX = 0;
+         // your code to increase the points variable by 1
+                  points = points + 1;
+                 changeBoxText(points);
+                   speed = speed + 3;   
+            };
 		})();
 	</script>
 </body>

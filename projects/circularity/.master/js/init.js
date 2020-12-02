@@ -96,9 +96,9 @@ game.checkCirclePosition(circle [4]);
              physikz.updatePosition(circles[4]);
             
             // TODO 6 : Call checkCircleBounds on your circles.
-            Function  game.checkCirclePosition()
-                if (circle.x > canvas.width) {
-	                circle.x = 0;
+           // Function  game.checkCirclePosition()
+               // if (circle.x > canvas.width) {
+	               // circle.x = 0;
     }
             
             // runner.checkCircleBounds(circles[0]);
