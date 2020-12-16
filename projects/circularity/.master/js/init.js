@@ -20,11 +20,11 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables //
-        var circle;     // variable to hold a single circle when creating circles / iterating
-        var circles = [];    // variable to store all circles in one Array
-
+        var circle;           // variable to hold a single circle when creating circles / iterating
+        var circles = [];    //  variable to store all circles in one Array
+ 
         // TODO 2 : Create a function that draws a circle  //
-        var drawCircle = function() {
+         function drawCircle() {
             // TODO 2: Draw a circle //
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
             physikz.addRandomVelocity(circle, canvas);
@@ -35,11 +35,11 @@ var init = function (window) {
         //hint creat a use (function nameOfFunction(parameters) { }
        
         // TODO 3 : Call the drawCircle function 5 times //
-        drawCircle(circle [0] );
-        drawCircle(circle [1]);
-        drawCircle(circle [2]);
-        drawCircle(circle [3]);
-        drawCircle(circle [4]);
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
 
         // TODO 7 : Create a Loop to call drawCircle 100 times
         var counter = 0;

@@ -58,13 +58,8 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			 var positionX = 0;
-            function update(10)
-            
-             {
+			var positionX = 0;
             var points = 0;
-
-            };
 			var speed = 10;
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -74,12 +69,15 @@
 			function update() {
          /* Your Code to Increase positionX by 10 HERE*/   
                 positionX = positionX + speed
-            moveBoxTo(positionX);
+                moveBoxTo(positionX);
                 if (positionX> boardWidth){
                     speed = speed * -1;
                 }
-                if (positionX < MINIMUM X-Coordinate){
-                    speed = speed * 0;
+                //whats another number you can use for minimum x cordinate? You can't use minimum x-coordinate because it isn't defined
+                if (positionX <5){
+                    //
+                    //multiplying your speed by 0 means your box isn't moving. What is another value you can use?
+                    speed = speed * 10;
                 }
 			};
 
