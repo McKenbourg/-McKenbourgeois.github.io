@@ -1,0 +1,40 @@
+
+
+User Story / Gameplay
+
+Describe the gameplay
+//the  game play is a ball is hit back and forth by to people using the two diffrent paddles.
+
+What are the conditions when the game begins?
+//the conditions it to be the first person to hit the ball over the persons paddle.
+
+Does the game have an end? If so, what are the conditions for when it ends?
+// Thw game ends when a player reaches 11 points.
+
+What ifs will there be?
+//If there is an a tie game you have t play again or restart.
+
+isual Game Components:
+What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
+
+Which will be static? (the board)
+//the backgrond(board)
+Which will be animated? (the box) 
+// the ball and the paddles
+
+What data will you need to manage each game component? For example, in Bouncing Box, the data values were positionX, 
+speedX, and points.isual 
+data needed to manage each game component is points.isual(something to keep track of the point),
+
+Events / Logic
+
+What events will occur in this game? (timer events, keyboard events, clicking events?)
+How do those events affect the data of the program?
+For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as 
+you can while remaining high-level!
+
+
+/////For example: in bouncing box, when the box is clicked://///
+/////The speed is increased                                   //
+/////The point total goes up by 1 and is displayed on the box///
+/////The position of the box is reset to 0                   ///
