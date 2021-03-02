@@ -10,12 +10,22 @@ function runProgram(){
   // Constant Variables
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
+  // new constant variable//
+  var KEY = {
+  "left": 0,
+  "right": 0,
+  "up": 0,
+  "down":0
+}
   
   // Game Item Objects
-
+var positionX = 0; // the x-coordinate location for the box
+var positionY = 0;
+var speedX = 0; // the speed for the box along the x-axis
+var speedY = 0;
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
+  $(document).on('keydown', handleKeyDown);                        // change 'eventType' to the type of event you want to handle
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -35,15 +45,36 @@ function runProgram(){
   Called in response to events.
   */
   function handleKeyDown(event) {
-//press up key --> accelerate box in negitive y direction
-//press down key --> accelerate box in positive y direction
-//and so on for left (-x) and right (+x)
-  }
+   if (event.which === KEY.left){
+        speedX = -5;
+    console.log("left pressed");
+   }
+   if (event.which === KEY.right){
+        speedX = -5;
+    console.log("right pressed");
+   }
+   if (event.which === KEY.up){
+        speedX = -5;
+    console.log("up pressed");
+   }
+  if (event.which === KEY.down){
+        speedX = -5;
+    console.log("down pressed");
+   }
+}
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
+  function repositionGameItem(newFrame){
+      positionX += speedX; // update the position of the box along the x-axis
+  }
+  function redrawGameItem(newFrame){
+      $("#box").css("left", positionX);  // draw the box in the new location, positionX pixels away from the "left"
+      $("#box").css("top", positionY);
+    }
+  
   
   function endGame() {
     // stop the interval timer
