@@ -13,10 +13,9 @@ function runProgram(){
   
   // Game Item Objects
 
-
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('eventType', handleEvent);                           // change 'eventType' to the type of event you want to handle
+  $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -27,15 +26,18 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
+    //update the position  of the game itiam on evry frame
+    //check for collisions
 
   }
   
   /* 
   Called in response to events.
   */
-  function handleEvent(event) {
-
+  function handleKeyDown(event) {
+//press up key --> accelerate box in negitive y direction
+//press down key --> accelerate box in positive y direction
+//and so on for left (-x) and right (+x)
   }
 
   ////////////////////////////////////////////////////////////////////////////////
