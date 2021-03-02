@@ -12,10 +12,10 @@ function runProgram(){
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   // new constant variable//
   var KEY = {
-  "left": 0,
-  "right": 0,
-  "up": 0,
-  "down":0
+  "LEFT": 37,
+  "RIGHT": 39,
+  "UP": 38,
+  "DOWN":40
 }
   
   // Game Item Objects
@@ -26,7 +26,7 @@ var speedY = 0;
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown);                        // change 'eventType' to the type of event you want to handle
-
+  $(document).on('keyup', handleKeyUp);                         // to stop
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +37,7 @@ var speedY = 0;
   */
   function newFrame() {
     //update the position  of the game itiam on evry frame
+    repositionBox();
     //check for collisions
 
   }
@@ -45,36 +46,66 @@ var speedY = 0;
   Called in response to events.
   */
   function handleKeyDown(event) {
-   if (event.which === KEY.left){
-        speedX = -5;
-    console.log("left pressed");
-   }
-   if (event.which === KEY.right){
-        speedX = -5;
-    console.log("right pressed");
-   }
-   if (event.which === KEY.up){
-        speedX = -5;
-    console.log("up pressed");
-   }
-  if (event.which === KEY.down){
-        speedX = -5;
-    console.log("down pressed");
-   }
+    //press up key --> accelerate box in negitive y direction
+    //press down key --> accelerate box in positive y direction
+    //and so on for left (-x) and right (+x)
+  
+    if( event.which === KEY.LEFT){
+        //console.log("left arrow pressed");
+       // positionX = positionX - 10;
+       speedX = - 5;
+    }
+     if( event.which === KEY.UP){
+        //console.log("up arrow pressed");
+         //positionY = positionY - 10;
+         speedY = - 5;
+    }
+     if( event.which === KEY.RIGHT){
+        //console.log("right arrow pressed");
+         //positionX = positionX + 10;
+         speedX = 5;
+    }
+     if( event.which === KEY.DOWN){
+       // console.log("down arrow pressed");
+         //positionY = positionY + 10;
+         speedY = 5;
+    }
+}
+
+ function handleKeyUp(event) {
+     //to stop box from moving
+    
+    if( event.which === KEY.LEFT){
+       speedX = - 0;
+    }
+     if( event.which === KEY.UP){
+         speedY = - 0;
+    }
+     if( event.which === KEY.RIGHT){
+         speedX = 0;
+    }
+     if( event.which === KEY.DOWN){
+         speedY = 0;
+    }
 }
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
-  function repositionGameItem(newFrame){
-      positionX += speedX; // update the position of the box along the x-axis
-  }
+  function repositionBox(newFrame){
+    //move the box to a new x location
+    positionX += speedX; // update the position of the box along the x-axis
+     $("#gameItem").css("left", positionX);  // draw the box in the new location, positionX pixels away from the "left"
+      
+    //move the box to a new y location
+    positionY += speedY;
+    $("#gameItem").css("top", positionY);
+}
   function redrawGameItem(newFrame){
-      $("#box").css("left", positionX);  // draw the box in the new location, positionX pixels away from the "left"
-      $("#box").css("top", positionY);
+     
     }
-  
+
   
   function endGame() {
     // stop the interval timer
