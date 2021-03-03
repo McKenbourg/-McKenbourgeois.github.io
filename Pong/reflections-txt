@@ -24,12 +24,14 @@ Which will be animated? (the box)
 
 What data will you need to manage each game component? For example, in Bouncing Box, the data values were positionX, 
 speedX, and points.isual 
-data needed to manage each game component is points.isual(something to keep track of the point),
+//data needed to manage each game component is points.isual(something to keep track of the point),
 
 Events / Logic
 
 What events will occur in this game? (timer events, keyboard events, clicking events?)
+// keybord clik events using the up and down arrows 
 How do those events affect the data of the program?
+//they help move move and let the game know what keybord bottons were clicked 
 For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as 
 you can while remaining high-level!
 
