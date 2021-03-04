@@ -12,7 +12,9 @@ Does the game have an end? If so, what are the conditions for when it ends?
 // Thw game ends when a player reaches 11 points.
 
 What ifs will there be?
-//If there is an a tie game you have t play again or restart.
+//if a player gets more points they win
+//if a players paddle goes out the board the game should restart
+
 
 isual Game Components:
 What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
@@ -34,7 +36,8 @@ How do those events affect the data of the program?
 //they help move move and let the game know what keybord bottons were clicked 
 For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as 
 you can while remaining high-level!
-
+//to move the paddles up i will have to decrese the y value like make it a negitive number.
+//tp move the paddle down i will have to increse the x value like make it a positive number
 
 /////For example: in bouncing box, when the box is clicked://///
 /////The speed is increased                                   //
