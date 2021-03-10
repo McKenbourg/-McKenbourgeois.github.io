@@ -12,11 +12,25 @@ function runProgram(){
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   
   // Game Item Objects
+// Initialization
+var ball = gameItem("", "");
+var rightpaddle = gameItem("", "");
+var leftpaddle = gameItem("", "");
 
+// Helper Functions
+function gameItem(name, species) {
+  var gameItem = {};
+  gameItem.id = id ;
+  gameItem.x = ($($id).css("left")) ;
+  gameItem.y = ($($id).css("top")) ;
+  gameItem.speedX = 0 ;
+  gameItem.speedY = 0 ;
+  return gameItem;
+}
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('eventType', handleEvent);                           // change 'eventType' to the type of event you want to handle
+  $(document).on('handleKeyDown', handleEvent);                           // change 'eventType' to the type of event you want to handle
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
