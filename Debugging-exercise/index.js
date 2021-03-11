@@ -60,13 +60,13 @@ function getId(number){
     return "circle" + number; 
 }
 
-// this adds a circle into the HTML
- funtion addNewCircleElement('circle', 'id');{
+// this adds a circle into the HTML4
+ function addNewCircleElement(circle, id){
     var $circle = $('<div>').attr('id', 'id')
         .css('left', circle.x)
         .css('top', circle.y)
         .addClass("circle");
-`    $circle.appendTo($board);  
+ $circle.appendTo($board);  
 };
 
 //////////////////
