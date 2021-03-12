@@ -119,6 +119,4 @@ function updateCircleOnScreen(circle){
 
     $(circle.id).css('left', circle.x);
     $(circle.id).css('top', circle.y);
-}
-
-);
+};
