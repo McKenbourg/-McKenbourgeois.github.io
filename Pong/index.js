@@ -12,11 +12,11 @@ function runProgram(){
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   // new constant variable//
   var KEY = {
-  "LEFT": 37,
-  "RIGHT": 39,
-  "UP": 38,
-  "DOWN":40,
-
+  "LEFT": ,
+  "RIGHT": ,
+  "UP":   ,
+  "DOWN":  ,
+  }
   // Game Item Objects
 // Initialization
 var ball = gameItem("#ball");

@@ -74,9 +74,9 @@ function getId(number){
 //////////////////
 
 // this should move all of the circles
-function update (){
+function update(){
     for (var i = 0; i < maxCircles; i++){
-        var circle = circles[j];
+        var circle = circles[i];
         moveCircle(circle);
         bounceCircle(circle);
         updateCircleOnScreen(circle);
@@ -89,7 +89,7 @@ function update (){
 
 // this moves circles in memory but doesn't update them on the screen
 function moveCircle(circle){
-    circle.x = circle.speedX;
+    circle.x += circle.speedX;
     circle.y += circle.speedY;
 }
 
@@ -115,8 +115,8 @@ function bounceCircle(circle){
 
 // this redraws the circle's position on the screen
 function updateCircleOnScreen(circle){
-    maxCircles = 0;
-
+   
     $(circle.id).css('left', circle.x);
     $(circle.id).css('top', circle.y);
 };
+}) 
