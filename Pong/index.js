@@ -12,10 +12,10 @@ function runProgram(){
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   // new constant variable//
   var KEY = {
-  "LEFT": ,
-  "RIGHT": ,
-  "UP":   ,
-  "DOWN":  ,
+  "LEFT": 37,
+  "RIGHT": 39,
+  "UP":  38,
+  "DOWN": 40,
   }
   // Game Item Objects
 // Initialization
@@ -51,26 +51,48 @@ function gameItem() {
 
   }
   
+/* 
+  collison detection.
+  */
+  function doCollide(ball, rightpaddle, leftpaddle) {
+    if (doCollide(ball, leftpaddle) ||{
+    /* bounce ball off paddle Left*/ 
+       (doCollide(ball,  rightpaddle)) 
+            showResult(true);
+    }
+     else {
+        showResult(false);
+    }
+}
+
+
   /* 
   Called in response to events.
   */
-
-function handleKeyDown(event) {
+ function handleKeyDown(event) {
     //press up key --> accelerate box in negitive y direction
     //press down key --> accelerate box in positive y direction
     //and so on for left (-x) and right (+x)
   
     if( event.which === KEY.LEFT){
+        //console.log("left arrow pressed");
+       // positionX = positionX - 10;
        speedX = - 5;
     }
      if( event.which === KEY.UP){
-       speedY = - 5;
+        //console.log("up arrow pressed");
+         //positionY = positionY - 10;
+         speedY = - 5;
     }
      if( event.which === KEY.RIGHT){
-        speedX = 5;
+        //console.log("right arrow pressed");
+         //positionX = positionX + 10;
+         speedX = 5;
     }
      if( event.which === KEY.DOWN){
-        speedY = 5;
+       // console.log("down arrow pressed");
+         //positionY = positionY + 10;
+         speedY = 5;
     }
 }
 
@@ -89,7 +111,8 @@ function handleKeyDown(event) {
      if( event.which === KEY.DOWN){
          speedY = 0;
     }
-  }
+}
+
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
