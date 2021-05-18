@@ -23,16 +23,6 @@ var ball = gameItem("#ball");
 var rightpaddle = gameItem("#rightpaddle");
 var leftpaddle = gameItem("#leftpaddle");
 
-// Helper Functions
-function gameItem() {
-  var gameItem = {};
-  gameItem.id = id ;
-  gameItem.x = ($($id).css("left")) ;
-  gameItem.y = ($($id).css("top")) ;
-  gameItem.speedX = 0 ;
-  gameItem.speedY = 0 ;
-  return gameItem;
-}
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
@@ -54,16 +44,18 @@ function gameItem() {
 /* 
   collison detection.
   */
-  function doCollide(ball, rightpaddle, leftpaddle) {
-    if (doCollide(ball, leftpaddle) ||{
-    /* bounce ball off paddle Left*/ 
-       (doCollide(ball,  rightpaddle)) 
-            showResult(true);
-    }
-     else {
-        showResult(false);
-    }
+  Helper Functions
+function gameItem() {
+  var gameItem = {};
+  gameItem.id = id ;
+  gameItem.x = ($($id).css("left")) ;
+  gameItem.y = ($($id).css("top")) ;
+  gameItem.speedX = 0 ;
+  gameItem.speedY = 0 ;
+  return gameItem;
 }
+    }
+
 
 
   /* 
@@ -127,4 +119,4 @@ function gameItem() {
     $(document).off();
   }
   
-}
+
