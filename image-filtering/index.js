@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 applyFilter(reddify);
 applyFilter(decreaseBlue);
-applyFilter(increseGreen);
+applyFilter(increaseGreen);
 applyFilterNoBackground(decreaseBlue);
 applyFilterNoBackground(reddify);
 
@@ -23,40 +23,40 @@ applyFilterNoBackground(reddify);
 function applyFilter(filterFunction){
     for (var r = 0; r <image.length; r++) { 
          for (var c = 0; c <image[r] ; c++) { 
-             var rgbString = rgbArrayToString;
-             var rgbNumbers = rgbStringToArray(rgbString); 
-            console.log(r + ", " + c);
+             var rgbString = image[r][c];
+             var rgbNumbers = rgbStringToArray(rgbString);   
+    filterFunction(rgbNumbers)
+    rgbString = rgbArrayToString(rgbNumbers)
+    image[r][c] = rgbString;
         }
     }
 }
-filterFunction(rgbNumbers);
-    rgbString = rgbStringToArray(rgbString)
-    image[r][y] = rgbString;
+
 // TODO 5: Create the applyFilterNoBackground function
 function applyFilterNoBackground(filterFunction){
     for (var r = 0; r <image.length; r++) { 
          for (var c = 0; c <image[r].length ; c++){
-
+            var rgbString = image[r][c];
+            var rgbNumbers = rgbStringToArray(rgbString);
          }
 }
-    var rgbString = image[r][c];
-    var rgbNumbers = rgbArrayToString(rgbString);
     if (image[r][c] === image[0][0]){
-        (image[r][c] = image[0][0])
+        (image[r][c] = image[0][0]);
     }
     else{
         filterFunction(rgbNumbers);
         rgbString = rgbArrayToString(rgbNumbers);
-        image[r][c]
+        image[r][c] = rgbString;
     }
+}
 // TODO 2 & 4: Create filter functions
 function reddify(change){
     change[red] = 255;
 }
-function increseGreen(change){
+function increaseGreen(change){
    change[blue] = math.min(change[blue] + change[green], 255);
 }
-function decreseBlue(change){
+function decreaseBlue(change){
     change[blue] = math.max(0, change[blue] - 30);
 }
 // CHALLENGE code goes below here///
