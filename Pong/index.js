@@ -20,8 +20,10 @@ function runProgram(){
   // Game Item Objects
 // Initialization
 var ball = gameItem("#ball");
-var rightpaddle = gameItem("#rightpaddle");
-var leftpaddle = gameItem("#leftpaddle");
+var rightpaddle = gameItem("#rightPaddle");
+var leftpaddle = gameItem("#leftPaddle");
+var score1 = gameItem("#score1");
+var score2 = gameItem("#score2");
 
 
   // one-time setup
@@ -36,27 +38,32 @@ var leftpaddle = gameItem("#leftpaddle");
   On each "tick" of the timer, a new frame is dynamically drawn using JavaScript
   by calling this function and executing the code inside.
   */
-  function newFrame() {
-    
-
-  }
-  
-/* 
-  collison detection.
-  */
-  Helper Functions
-function gameItem() {
-  var gameItem = {};
-  gameItem.id = id ;
-  gameItem.x = ($($id).css("left")) ;
-  gameItem.y = ($($id).css("top")) ;
-  gameItem.speedX = 0 ;
-  gameItem.speedY = 0 ;
-  return gameItem;
+ function repositionBall() {
+  box.x += box.speedX;                 // update the position of the box along the x-axis
+    $("#ball").css("left", gameItem.x);    // draw the ball in the new location, positionX pixels away from the "left"
+    $("#ball").css("top", gameItem.y)
 }
+  function repositionrightPaddle() {
+  box.x += box.speedX;                
+    $("#rightPaddle").css("left",gameItem.x);  
+    $("#rightPaddle").css("top", gameItem.y)
+}
+
+function repositionleftPaddle() {
+  positionX += speedX;                 
+    $("#leftPaddle").css("left", gameItem.x);  
+    $("#leftPaddle").css("top", gameItem.y)
+}
+ 
+//collison detection//
+function doCollide(ball, leftPaddle, rightPaddle ){
+   if (doCollide(ball, leftPaddle) || 
+		doCollide(rightPaddle, ball)) {
+        showResult(true);
+    } else {
+        showResult(false);
     }
-
-
+}
 
   /* 
   Called in response to events.
@@ -66,7 +73,11 @@ function gameItem() {
     //press down key --> accelerate box in positive y direction
     //and so on for left (-x) and right (+x)
   
-    if( event.which === KEY.LEFT){
+        var keycode = event.which;
+             console.log(keycode);
+  
+
+     if( event.which === KEY.LEFT){
         //console.log("left arrow pressed");
        // positionX = positionX - 10;
        speedX = - 5;
@@ -119,4 +130,25 @@ function gameItem() {
     $(document).off();
   }
   
+ // Helper Functions//
+var ball = {};
+ball.x =100;
+ball.y = 50;
+box.speedX = 1;
+ball.speedY = 1;
+ball.id = "#ball";
+
+var rightPaddle = {};
+rightPaddle.x = 100;
+rightPaddle.y = 50;
+rightPaddle.speedX = 1;
+rightPaddle.speedY = 1;
+rightPaddle.id = "#rightPaddle";
+
+var leftPaddle = {};
+leftPaddle.x = 100;
+leftPaddle.y = 50;
+leftPaddle.speedX = 1;
+leftPaddle.speedY = 1;
+leftPaddle.id = "#leftPaddle";
 
