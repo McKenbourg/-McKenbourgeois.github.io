@@ -38,25 +38,26 @@ function applyFilterNoBackground(filterFunction){
          for (var c = 0; c <image[r].length ; c++){
             var rgbString = image[r][c];
             var rgbNumbers = rgbStringToArray(rgbString);
-         }
-}
-    if (image[r][c] === image[0][0]){
+         if (image[r][c] === image[0][0]){
         (image[r][c] = image[0][0]);
     }
-    else{
+         else{
         filterFunction(rgbNumbers);
         rgbString = rgbArrayToString(rgbNumbers);
         image[r][c] = rgbString;
     }
 }
+         }
+
+}
 // TODO 2 & 4: Create filter functions
 function reddify(change){
-    change[red] = 255;
+    change[RED] = 255;
 }
 function increaseGreen(change){
-   change[blue] = math.min(change[blue] + change[green], 255);
+   change[BLUE] = Math.min(change[BLUE] + change[GREEN], 255);
 }
 function decreaseBlue(change){
-    change[blue] = math.max(0, change[blue] - 30);
+    change[BLUE] = Math.max(0, change[BLUE] - 30);
 }
 // CHALLENGE code goes below here///
